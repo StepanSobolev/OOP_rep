@@ -1,3 +1,4 @@
+import time
 class Auto:
     brand = None
     age = None
@@ -22,10 +23,25 @@ class Auto:
     def birthday(self):
         self.age += 1
 
+class Truck(Auto):
+    max_load = None
 
-run_auto_1 = Auto('Mazda', '323f', 2002)
-print(run_auto_1)
-run_auto_2 = Auto('Mazda', '626', 2012)
-print(run_auto_2)
-run_auto_3 = Auto('Mazda', '3', 2008)
-print(run_auto_3)
+    def move(self):
+        print('attention move')
+
+    def load(self):
+        time.sleep(1)
+        print('load')
+        time.sleep(1)
+
+
+class Car(Auto):
+    max_speed = None
+
+    def move(self):
+        print(f'move max speed is {self.max_speed}')
+
+
+
+run_auto_Truck = Truck('Man', '252', 2016)
+print(run_auto_Truck)
