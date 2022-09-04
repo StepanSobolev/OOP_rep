@@ -1,33 +1,16 @@
 import time
-class Auto:
-    brand = None
-    age = None
-    color = 'Red'
-    mark = None
-    weight = 12
-
-    def __init__(self, brand, mark, age):
-        self.brand = brand
-        self.age = age
-        self.mark = mark
-
-    def __str__(self):
-        return f'Now - {self.brand} {self.mark} {self.age}'
-
-    def move(self):
-        print('move')
-
-    def stop(self):
-        print('stop')
-
-    def birthday(self):
-        self.age += 1
+from OOP_Home_1 import Auto
 
 class Truck(Auto):
     max_load = None
 
+    def __init__(self, brand, mark, age, max_load):
+        super().__init__(brand, mark, age)
+        self.max_load = max_load
+
     def move(self):
-        print('attention move')
+        print('attention')
+        super().move()
 
     def load(self):
         time.sleep(1)
@@ -38,10 +21,19 @@ class Truck(Auto):
 class Car(Auto):
     max_speed = None
 
+    def __init__(self, brand, mark, age, max_speed):
+        super().__init__(brand, mark, age)
+        self.max_speed = max_speed
+
     def move(self):
-        print(f'move max speed is {self.max_speed}')
+        super().move()
+        print(f'Max speed is {self.max_speed}')
 
 
+run_auto_Truck = Truck('Man', '252', 2016, 54)
+run_auto_Truck.move()
 
-run_auto_Truck = Truck('Man', '252', 2016)
-print(run_auto_Truck)
+print('-' * 30)
+
+run_auto_Car = Car('BMV', '323', 2003, 250)
+run_auto_Car.move()

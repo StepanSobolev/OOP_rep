@@ -23,9 +23,9 @@ class Auto:
         self.age += 1
 
 
-run_auto_1 = Auto('Mazda', '323f', 2002)
-print(run_auto_1)
-run_auto_2 = Auto('Mazda', '626', 2012)
-print(run_auto_2)
-run_auto_3 = Auto('Mazda', '3', 2008)
-print(run_auto_3)
+# run_auto_1 = Auto('Mazda', '323f', 2002)
+# print(run_auto_1)
+# run_auto_2 = Auto('Mazda', '626', 2012)
+# print(run_auto_2)
+# run_auto_3 = Auto('Mazda', '3', 2008)
+# print(run_auto_3)
