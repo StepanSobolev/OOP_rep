@@ -21,9 +21,15 @@ class Circle(Point):
         return Circle(radius, x, y)
 
     def __sub__(self, other):
-        x = self.x - other.x
-        y = self.y - other.y
-        radius = abs(self.radius - other.radius)
+        if self.radius == other.radius:
+            x = self.x - other.x
+            y = self.y - other.y
+            return Point(x, y)
+        else:
+            x = self.x - other.x
+            y = self.y - other.y
+            radius = abs(self.radius - other.radius)
+            return Circle(radius, x, y)
 
     def edge_distance_from_origin(self):
         return abs(self.distance_from_origin() - self.radius)
@@ -35,3 +41,7 @@ class Circle(Point):
         return math.pi * (self.radius**2)
 
 
+a = Circle(3, 10, 12)
+b = Circle(3, 8, 5)
+
+print(a-b)
